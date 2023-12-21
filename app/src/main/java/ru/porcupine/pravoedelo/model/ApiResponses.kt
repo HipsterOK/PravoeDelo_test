@@ -1,4 +1,4 @@
-package ru.porcupine.pravoedelo
+package ru.porcupine.pravoedelo.model
 
 data class CodeResponse(
     val code: String,

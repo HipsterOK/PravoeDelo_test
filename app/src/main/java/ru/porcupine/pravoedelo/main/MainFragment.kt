@@ -1,4 +1,4 @@
-package ru.porcupine.pravoedelo
+package ru.porcupine.pravoedelo.main
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,9 +1,10 @@
-package ru.porcupine.pravoedelo
+package ru.porcupine.pravoedelo.api
 
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
+import ru.porcupine.pravoedelo.model.CodeResponse
 
 interface ApiService {
 

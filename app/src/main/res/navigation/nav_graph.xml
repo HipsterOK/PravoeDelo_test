@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/authFragment"
-        android:name="ru.porcupine.pravoedelo.AuthFragment"
+        android:name="ru.porcupine.pravoedelo.auth.AuthFragment"
         android:label="AuthFragment"
         tools:layout="@layout/fragment_auth">
         <action
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="ru.porcupine.pravoedelo.MainFragment"
+        android:name="ru.porcupine.pravoedelo.main.MainFragment"
         android:label="NextFragment"
         tools:layout="@layout/fragment_main">
         <!-- Add any additional configuration for the next fragment -->

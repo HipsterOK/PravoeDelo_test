@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthFragment" >
+    tools:context=".auth.AuthFragment" >
 
     <EditText
         android:id="@+id/phoneNumberEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:backgroundTint="@color/main_orange"
         android:ems="10"
-        android:hint="Номер телефона"
+        android:hint="@string/number"
         android:inputType="phone"
-        android:textColor="@color/main_orange"
+        android:textColor="@color/main_gray"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,12 +28,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:autofillHints=""
         android:backgroundTint="@color/main_orange"
         android:ems="10"
-        android:hint="СМС-код"
-        android:inputType="number"
-        android:password="true"
-        android:textColor="@color/main_orange"
+        android:hint="@string/sms_code"
+        android:inputType="numberPassword"
+        android:textColor="@color/main_gray"
+        android:textSize="18sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/main_orange"
-        android:text="Получить код"
+        android:text="@string/get_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEt" />
@@ -54,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/main_orange"
-        android:text="Войти"
+        android:text="@string/login"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/main_orange"
-        android:text="Забыли код?"
+        android:text="@string/regenerate_password"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +83,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/logo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

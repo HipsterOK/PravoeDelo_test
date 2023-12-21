@@ -1,4 +1,4 @@
-package ru.porcupine.pravoedelo
+package ru.porcupine.pravoedelo.auth
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import okhttp3.ResponseBody
+import ru.porcupine.pravoedelo.api.ApiService
+import ru.porcupine.pravoedelo.model.CodeResponse
+import ru.porcupine.pravoedelo.model.ErrorResponse
+import ru.porcupine.pravoedelo.network.Either
 
 class AuthViewModel(apiService: ApiService) : ViewModel() {
 

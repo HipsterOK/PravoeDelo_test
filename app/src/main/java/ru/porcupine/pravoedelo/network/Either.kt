@@ -1,4 +1,4 @@
-package ru.porcupine.pravoedelo
+package ru.porcupine.pravoedelo.network
 
 sealed class Either<out A, out B> {
     data class Success<out A>(val value: A) : Either<A, Nothing>()

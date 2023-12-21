@@ -1,4 +1,4 @@
-package ru.porcupine.pravoedelo
+package ru.porcupine.pravoedelo.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import ru.porcupine.pravoedelo.R
+import ru.porcupine.pravoedelo.api.ApiService
 import ru.porcupine.pravoedelo.databinding.FragmentAuthBinding
+import ru.porcupine.pravoedelo.network.Either
+import ru.porcupine.pravoedelo.network.RetrofitClient
 
 class AuthFragment() : Fragment() {
 
