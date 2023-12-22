@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.porcupine.pravoedelo.R
 import ru.porcupine.pravoedelo.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -23,7 +24,7 @@ class MainFragment : Fragment() {
         val phoneNumber = arguments?.getString("phoneNumber")
         val token = arguments?.getString("token")
 
-        binding.data.text = "Здравствуйте, “${phoneNumber}”, Ваш токен “${token}}"
+        binding.data.text = getString(R.string.info_data, phoneNumber, token)
     }
 
 }

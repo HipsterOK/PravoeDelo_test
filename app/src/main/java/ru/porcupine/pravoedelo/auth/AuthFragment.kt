@@ -13,7 +13,7 @@ import ru.porcupine.pravoedelo.databinding.FragmentAuthBinding
 import ru.porcupine.pravoedelo.network.Either
 import ru.porcupine.pravoedelo.network.RetrofitClient
 
-class AuthFragment() : Fragment() {
+class AuthFragment : Fragment() {
 
     private lateinit var binding: FragmentAuthBinding
 
@@ -50,13 +50,14 @@ class AuthFragment() : Fragment() {
         viewModel.codeResponse.observe(viewLifecycleOwner) { either ->
             if (either is Either.Success) {
                 val codeResponse = either.value
-                if (codeResponse.status == "new") {
-                    Toast.makeText(requireContext(), "Код отправлен в СМС", Toast.LENGTH_SHORT)
+                if (codeResponse?.status == "new") {
+                    Toast.makeText(requireContext(),
+                        getString(R.string.code_sent), Toast.LENGTH_SHORT)
                         .show()
                 } else {
                     Toast.makeText(
                         requireContext(),
-                        "Вы уже зарегистрированы. Введите Ваш код.",
+                        getString(R.string.profile_already_created),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -64,16 +65,16 @@ class AuthFragment() : Fragment() {
                 binding.passwordEt.visibility = View.VISIBLE
             } else if (either is Either.Failure) {
                 val errorResponse = either.error
-                Toast.makeText(requireContext(), errorResponse.error, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), errorResponse?.error, Toast.LENGTH_SHORT).show()
             }
         }
 
         viewModel.regenerateCodeResponse.observe(viewLifecycleOwner) { either ->
             if (either is Either.Success) {
-                Toast.makeText(requireContext(), "Код отправлен в СМС", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), R.string.code_sent, Toast.LENGTH_SHORT).show()
             } else if (either is Either.Failure) {
                 val errorResponse = either.error
-                Toast.makeText(requireContext(), errorResponse.error, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), errorResponse?.error, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -84,14 +85,14 @@ class AuthFragment() : Fragment() {
 
                 val bundle = Bundle().apply {
                     putString("phoneNumber", phoneNumber)
-                    putString("token", token.string())
+                    putString("token", token?.string())
                 }
                 Navigation.findNavController(view)
                     .navigate(R.id.action_authFragment_to_mainFragment, bundle)
-                Toast.makeText(requireContext(), "Успех!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.succes), Toast.LENGTH_SHORT).show()
             } else if (either is Either.Failure) {
                 val errorResponse = either.error
-                Toast.makeText(requireContext(), errorResponse.error, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), errorResponse?.error, Toast.LENGTH_SHORT).show()
                 binding.regenerateCodeBtn.visibility = View.VISIBLE
             }
         }

@@ -8,4 +8,8 @@
     <string name="regenerate_password">Забыли код?</string>
     <string name="logo">logo</string>
     <string name="number">Номер телефона</string>
+    <string name="code_sent">Код отправлен в СМС</string>
+    <string name="profile_already_created">Вы уже зарегистрированы. Введите Ваш код.</string>
+    <string name="succes">Успех!</string>
+    <string name="info_data">Здравствуйте, “%1$s”, Ваш токен “%2$s}</string>
 </resources>

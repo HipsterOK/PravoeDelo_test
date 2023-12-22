@@ -15,14 +15,15 @@ class AuthViewModel(apiService: ApiService) : ViewModel() {
 
     private val repository: AuthRepository = AuthRepository(apiService)
 
-    private val _codeResponse = MutableLiveData<Either<CodeResponse, ErrorResponse>>()
-    val codeResponse: LiveData<Either<CodeResponse, ErrorResponse>> get() = _codeResponse
+    private val _codeResponse = MutableLiveData<Either<CodeResponse?, ErrorResponse?>>()
+    val codeResponse: LiveData<Either<CodeResponse?, ErrorResponse?>> get() = _codeResponse
 
-    private val _regenerateCodeResponse = MutableLiveData<Either<String, ErrorResponse>>()
-    val regenerateCodeResponse: LiveData<Either<String, ErrorResponse>> get() = _regenerateCodeResponse
+    private val _regenerateCodeResponse = MutableLiveData<Either<String?, ErrorResponse?>>()
+    val regenerateCodeResponse: LiveData<Either<String?, ErrorResponse?>> get() = _regenerateCodeResponse
 
-    private val _tokenResponse = MutableLiveData<Either<ResponseBody, ErrorResponse>>()
-    val tokenResponse: LiveData<Either<ResponseBody, ErrorResponse>> get() = _tokenResponse
+    private val _tokenResponse = MutableLiveData<Either<ResponseBody?, ErrorResponse?>>()
+    val tokenResponse: LiveData<Either<ResponseBody?, ErrorResponse?>> get() = _tokenResponse
+
 
     fun getCode(phoneNumber: String) {
         viewModelScope.launch {
